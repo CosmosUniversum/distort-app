@@ -5,6 +5,7 @@ import Signup from '../Signup/Signup'
 import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
+import Movies from '../Movies/Movies'
 import * as authService from '../../services/authService'
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
+				<Route path='/movies' element={<Movies user={user} />} />
 			</Routes>
 		</>
 	);

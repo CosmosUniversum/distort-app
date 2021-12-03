@@ -9,5 +9,5 @@ const Landing = ({user}) => {
     </main>
   )
 }
- 
+
 export default Landing

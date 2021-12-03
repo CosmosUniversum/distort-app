@@ -2,17 +2,17 @@ import mongoose from 'mongoose'
 
 const reviewSchema = new mongoose.Schema({
   content: String,
-  Rating: Number,
-  Author: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
+  rating: Number,
+  author: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
 }, 
 {
 timestamps: true
 })
 
-const artistSchema = new mongoose.Schema({
+const musicSchema = new mongoose.Schema({
   name: String,
-  Type: String,
-  Description: String,
+  type: String,
+  tescription: String,
   wikiUrl: String,
   youtubeUrl: String,
   reviews: [reviewSchema]
@@ -21,8 +21,8 @@ const artistSchema = new mongoose.Schema({
   timestamps: true,  
 })
 
-const Artist = mongoose.model('Artist', artistSchema)
+const Music = mongoose.model('Music', musicSchema)
 
 export {
-  Artist
+  Music
 }
