@@ -1,5 +1,6 @@
 import styles from './Music.css'
 import AddMusic from '../../components/AddSuggestion/AddSuggestion'
+import AddSuggestion from '../../components/AddSuggestion/AddSuggestion'
 
 const Music = ({ user, suggestions }) => {
     return (
@@ -14,7 +15,7 @@ const Music = ({ user, suggestions }) => {
             <>
                 <div>
                     <p>{suggestion.Name}</p>
-                    <AddMusic suggestion={suggestion}/>
+                    <AddSuggestion suggestion={suggestion}/>
                 </div>
             </>  
             )}

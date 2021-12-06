@@ -1,5 +1,5 @@
-function addToList(formData) {
-  console.log(formData)
+function addToList(suggestionData) {
+  return console.log(suggestionData)
 }
 
 export {
