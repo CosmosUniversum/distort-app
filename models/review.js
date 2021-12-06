@@ -2,8 +2,8 @@ import mongoose from 'mongoose'
 
 const reviewSchema = new mongoose.Schema({
   content: String,
-  Rating: Number,
-  Author: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
+  rating: Number,
+  author: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
 }, 
 {
 timestamps: true

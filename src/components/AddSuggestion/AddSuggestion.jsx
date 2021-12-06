@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { addToList } from '../../services/listService'
 
 const AddSuggestion = ({suggestion}) => {
   const [formData, setFormData] = useState({
+    listName: '',
     Name: '',
     Type: '',
     wTeaser: '',
@@ -26,14 +28,11 @@ const AddSuggestion = ({suggestion}) => {
         wUrl: suggestion.wUrl,
         yUrl: suggestion.yUrl
     })
-    
+    await addToList()
     } catch (err) {
       console.log(err)
     }
   }
-  
-  // const { Name, Type, Description, wikiUrl, youtubeUrl } = formData
-  
 
   return (
     <form
