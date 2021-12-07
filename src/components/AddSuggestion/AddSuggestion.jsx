@@ -7,7 +7,7 @@ const AddSuggestion = ({suggestion}) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      console.log(`clicked  ${suggestion.Name}`)
+      addToList(suggestion)
     } catch (err) {
       console.log(err)
     }
