@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { follow } from '../../services/followService'
 
-const FollowForm = (userToFollow, userFollowing) => {
+const FollowForm = ({userToFollow, userFollowing}) => {
 
     const handleSubmit = e => {
         e.preventDefault()

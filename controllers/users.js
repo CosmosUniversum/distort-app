@@ -6,12 +6,9 @@ function index(req, res) {
 }
 
 function addFollower(req, res) {
-  User.findById(req.params.id)
-  .populate('profile')
-  .then(user => {
-    user.profile.following.push(req.params.follower)
-    user.save()
-    .then()
+  User.findById(req.params.Id)
+  .then(userFollowing => {
+    return console.log(userFollowing)
   })
 }
 
