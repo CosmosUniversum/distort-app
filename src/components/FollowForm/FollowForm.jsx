@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
+import { follow } from '../../services/followService'
 
-const FollowForm = (props) => {
-    const [formData, setformData] = useState({
-        userToFollow: '',
-        userFollowing: ''
-    })
+const FollowForm = (userToFollow, userFollowing) => {
 
     const handleSubmit = e => {
         e.preventDefault()
         try {
-            
+            follow(userToFollow, userFollowing)
         } catch (err) {
             console.log(err)
         }

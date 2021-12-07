@@ -1,5 +1,5 @@
 function follow(userToFollow, userFollowing) {
-    return fetch(`/api/users/${userToFollow}`)
+    return console.log(userToFollow, userFollowing)
 }
 
 export {follow}
