@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Profile = () => {
 const location = useLocation()
@@ -15,10 +15,10 @@ const user = location.state
             Avatar: {user.avatar}
             </h2>
             <h2>
-            Following: {user.following}
+            <Link to='/following'>Following</Link>: {user.following}
             </h2>
             <h2>
-            Followers: {user.followers}
+            <Link to='/followers'>Followers</Link>: {user.followers}
             </h2>
             <h2>
             Music List: {user.musicList}
