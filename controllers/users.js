@@ -5,14 +5,19 @@ function index(req, res) {
   .then(users => res.json(users))
 }
 
-function addFollower(req, res) {
-  User.findById(req.params.Id)
-  .then(userFollowing => {
-    return console.log(userFollowing)
+function follow(req, res) {
+  User.findById(req.user.profile)
+  .populate('profile')
+  .then(profile => {
+    console.log(profile)
+  })
+  .catch((err) => {
+    console.log(err)
+    res.redirect('/')
   })
 }
 
 export {
   index,
-  addFollower
+  follow
 }

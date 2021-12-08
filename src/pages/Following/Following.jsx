@@ -1,6 +1,6 @@
 import React from 'react'
   
-const Following = () => {
+const Following = (props) => {
   return ( 
     <body>
       I am the following page
