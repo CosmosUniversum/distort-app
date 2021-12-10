@@ -7,7 +7,7 @@ const List = (props) => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    createdBy: props.user._id,
+    createdBy: props.user?._id,
     list: []
   })
   
