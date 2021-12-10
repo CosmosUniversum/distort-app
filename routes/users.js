@@ -10,6 +10,8 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.get('/', checkAuth, usersCtrl.index)
-router.post('/:id', checkAuth, usersCtrl.addFollower)
+router.get('/:id', usersCtrl.show)
+router.post('/:id/createList', usersCtrl.createList)
+router.patch('/:id/follow', usersCtrl.addFollower)
 
 export { router }
