@@ -21,10 +21,10 @@ const user = location.state
             Avatar: {user.avatar}
             </h2>
             <h2>
-            Following: {user.following}
+            Following: {user.following.length}
             </h2>
             <h2>
-            Followers: {user.followers}
+            Followers: {user.followers?.length}
             </h2>
             <h2>
             Music List: {user.musicList}
