@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import './FollowForm.css'
+import * as followService from '../../services/followService'
 
 const FollowForm = (props) => {
-    const [formData, setformData] = useState({
+    const [followData, setFollowData] = useState({
         userToFollow: '',
         userFollowing: ''
     })
@@ -10,7 +10,10 @@ const FollowForm = (props) => {
     const handleSubmit = e => {
         e.preventDefault()
         try {
-            
+        setFollowData({
+            userToFollow: props.userToFollow,
+            userFollowing: props.userFollowing})
+            followService.follow(followData)
         } catch (err) {
             console.log(err)
         }
@@ -18,7 +21,7 @@ const FollowForm = (props) => {
     
     return (
         <form onSubmit={handleSubmit}>
-            <button id="followbtn">Follow</button>
+            <button>Follow</button>
         </form>
     );
 }
