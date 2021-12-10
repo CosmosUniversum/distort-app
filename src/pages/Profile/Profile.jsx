@@ -21,7 +21,7 @@ const user = location.state
             Avatar: {user.avatar}
             </h2>
             <h2>
-            Following: {user.following.length}
+            Following: {user.following?.length}
             </h2>
             <h2>
             Followers: {user.followers?.length}
