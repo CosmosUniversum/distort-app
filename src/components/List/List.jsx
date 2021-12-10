@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import './List.css'
+import { createList } from '../../services/listService'
 
 
 const List = (props) => {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
-    createdBy: '',
-    lists: ''
+    createdBy: props.user._id,
+    list: []
   })
   
 
@@ -22,9 +22,7 @@ const List = (props) => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      setFormData({
-        ...formData, [e.target.name]: e.target.value
-    })
+        createList(formData)
     
     } catch (err) {
       console.log(err)
@@ -35,12 +33,10 @@ const List = (props) => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className='container'
     >
     <div>
     <h4>Name of New List</h4>
     <input
-      className='label'
       type="text"
       autoComplete="off"
       placeholder='name of new list'
@@ -51,7 +47,6 @@ const List = (props) => {
       /> 
     </div>
     <input
-      className='label'
       type="text"
       autoComplete="off"
       placeholder='description'
@@ -60,8 +55,8 @@ const List = (props) => {
       name="description"
       onChange={handleChange}
       />
-    <button className='button'>Create List</button>
-    {<Link to='/' ><button className='button'>Cancel</button></Link>}
+    <button>Create List</button>
+    {<Link to='/' ><button>Cancel</button></Link>}
     </form>
   );
 }
